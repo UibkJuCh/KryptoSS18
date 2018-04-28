@@ -1,0 +1,26 @@
+Startzustand:
+1.0 
+0.0 
+0.0 
+0.0 
+
+Folgewarscheinlichkeiten:
+0.8 0.0 0.6 0.0 
+0.2 0.0 0.4 0.0 
+0.0 0.4 0.0 0.1 
+0.0 0.6 0.0 0.9 
+
+Folgewarscheinlichkeiten nach 7 Tagen:
+0.2727275 0.27272737 0.2727275 0.27272728 
+0.09090915 0.09090912 0.090909146 0.09090909 
+0.09090911 0.0909091 0.09090911 0.090909086 
+0.5454546 0.5454546 0.5454546 0.54545456 
+
+Wetter nach 7 Tagen:
+0.2727275 
+0.09090915 
+0.09090911 
+0.5454546 
+
+Die Wahrscheinlichkeit für Sonne nach 7 Tagen ist: 0.3636366
+Die Wahrscheinlichkeit für bewölkt nach 7 Tagen ist: 0.63636374
