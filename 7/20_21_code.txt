@@ -1,0 +1,81 @@
+public class Markov_Wetter {
+
+	public static void main(String[] args) {
+		float [][] folgews= new float [4][4];
+		float [][] startzustand= new float [4][1];
+		int n=7;
+		float test= (float) 0.0;
+		folgews=fill_array(folgews);
+		startzustand=fill_array(startzustand);
+		startzustand[0][0]=(float) 1.0;
+		folgews[0][0]=(float) 0.8;
+		folgews[0][2]=(float) 0.6;
+		folgews[1][0]=(float) 0.2;
+		folgews[1][2]=(float) 0.4;
+		folgews[2][1]=(float) 0.4;
+		folgews[2][3]=(float) 0.1;
+		folgews[3][1]=(float) 0.6;
+		folgews[3][3]=(float) 0.9;
+		System.out.println("Startzustand:");
+		print_array(startzustand);
+		System.out.println("Folgewarscheinlichkeiten:");		
+		print_array(folgews);
+		float[][]result=null;
+		result=mat_pwr_nTimes(n,folgews);
+		System.out.println("Folgewarscheinlichkeiten nach "+n+" Tagen:");	
+		print_array(result);
+		System.out.println("Wetter nach "+n+" Tagen:");	
+		result=multiply(result, startzustand);
+		print_array(result);
+		test+=result[0][0];
+		//test+=result[1][0];
+		test+=result[2][0];
+		//test+=result[3][0];
+		System.out.println("Die Wahrscheinlichkeit für Sonne nach "+n+" Tagen ist: "+test);
+		test=(float) 0.0;
+		test+=result[1][0];
+		test+=result[3][0];
+		System.out.println("Die Wahrscheinlichkeit für bewölkt nach "+n+" Tagen ist: "+test);
+	}
+	
+	public static float[][] fill_array(float[][] input){
+		for (int i=0; i<input.length;i++) {
+			for(int j=0;j<input[0].length;j++) {
+				input[i][j]=0;
+			}
+		}
+		
+		return input; 
+	}
+	public static void print_array(float[][] input) {
+		for (int i=0; i<input.length;i++) {
+			for(int j=0;j<input[0].length;j++) {
+				System.out.print(input[i][j]+" ");
+			}
+			System.out.println("");
+		}
+		System.out.println("");
+	}
+    public static float[][] multiply(float[][] a, float[][] b) {
+        int m1 = a.length;
+        int n1 = a[0].length;
+        int m2 = b.length;
+        int n2 = b[0].length;
+        if (n1 != m2) throw new RuntimeException("Illegal matrix dimensions.");
+        float[][] c = new float[m1][n2];
+        for (int i = 0; i < m1; i++)
+            for (int j = 0; j < n2; j++)
+                for (int k = 0; k < n1; k++)
+                    c[i][j] += a[i][k] * b[k][j];
+        return c;
+    }
+    
+    public static float[][] mat_pwr_nTimes(int n, float[][] input){
+    	float[][]res=input;
+		for(int i=0;i<n-1;i++) {
+		res=multiply(res, res);
+		}
+    	return res;
+    }
+
+}
