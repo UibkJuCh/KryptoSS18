@@ -24,3 +24,20 @@ Wetter nach 7 Tagen:
 
 Die Wahrscheinlichkeit für Sonne nach 7 Tagen ist: 0.46542928
 Die Wahrscheinlichkeit für bewölkt nach 7 Tagen ist: 0.5345708
+
+
+Folgewarscheinlichkeiten nach 365 Tagen:
+0.27272734 0.27272725 0.2727273 0.2727272 
+0.09090914 0.09090911 0.09090912 0.0909091 
+0.09090908 0.09090909 0.09090909 0.09090909 
+0.54545444 0.5454545 0.5454545 0.5454545 
+
+Wetter nach 365 Tagen:
+0.27272734 
+0.09090914 
+0.09090908 
+0.54545444 
+
+Die Wahrscheinlichkeit für Sonne nach 365 Tagen ist: 0.36363643
+Die Wahrscheinlichkeit für bewölkt nach 365 Tagen ist: 0.63636357
+
