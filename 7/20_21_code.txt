@@ -3,7 +3,7 @@ public class Markov_Wetter {
 	public static void main(String[] args) {
 		float [][] folgews= new float [4][4];
 		float [][] startzustand= new float [4][1];
-		int n=7;
+		int n=365;
 		float test= (float) 0.0;
 		folgews=fill_array(folgews);
 		startzustand=fill_array(startzustand);
@@ -73,7 +73,7 @@ public class Markov_Wetter {
     public static float[][] mat_pwr_nTimes(int n, float[][] input){
     	float[][]res=input;
 		for(int i=0;i<n-1;i++) {
-		res=multiply(res, res);
+		res=multiply(res, input);
 		}
     	return res;
     }
